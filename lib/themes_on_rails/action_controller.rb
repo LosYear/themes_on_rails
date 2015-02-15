@@ -10,9 +10,9 @@ module ThemesOnRails
         controller_class.send(filter_method, options) do |controller|
 
           # set layout
-          #controller_class.layout Proc.new { |controller|
-          #  ThemesOnRails::ActionController.new(controller, theme).theme_name
-          #}, options
+          controller_class.layout Proc.new { |controller|
+            ThemesOnRails::ActionController.new(controller, theme).theme_name
+          }, options
 
           # initialize
           theme_instance = ThemesOnRails::ActionController.new(controller, theme)
